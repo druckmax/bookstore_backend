@@ -11,7 +11,9 @@ import user from './routes/userRoutes.js';
 import reviews from './routes/reviewsRoutes.js';
 import orders from './routes/ordersRoutes.js';
 
-dotenv.config({ path: `./.env.${process.env.NODE_ENV}` })
+if (process.env.NODE_ENV === "development") {
+  dotenv.config({ path: `./.env.${process.env.NODE_ENV}` })
+}
 
 const app = express();
 
